@@ -1,0 +1,20 @@
+{
+  "name": "test-mqtt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/pubsub": "^6.1.57",
+    "aws-amplify": "^6.15.1",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
