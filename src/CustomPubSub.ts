@@ -1,4 +1,9 @@
 import { PubSub, PubSubOptions } from '@aws-amplify/pubsub'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
+
+const AUTHORIZER_NAME = process.env.AUTHORIZER_NAME
 
 export class CustomPubSub extends PubSub {
   private readonly token: string
@@ -14,7 +19,7 @@ export class CustomPubSub extends PubSub {
       const { endpoint } = this.options
 
       return Promise.resolve(
-        `${endpoint}?x-amz-customauthorizer-name=SuvieCheckoutTokenAuthorizer&token=${encodeURIComponent(this.token)}`
+        `${endpoint}?x-amz-customauthorizer-name=${AUTHORIZER_NAME}&token=${encodeURIComponent(this.token)}`
       )
     })()
   }
